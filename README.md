@@ -1,6 +1,6 @@
 # 🔢 Simple Calculator
 
-A clean and responsive calculator built using **HTML**, and **JavaScript**. This project performs basic arithmetic operations like addition, subtraction, multiplication, and division.
+A clean and responsive calculator built using **HTML**, **CSS** and **JavaScript**. This project performs basic arithmetic operations like addition, subtraction, multiplication, and division.
 
 ## ✨ Features
 
