@@ -5,18 +5,31 @@
   </head>
   <body>
     <button onclick="console.log(`cart quantity: ${cartQuantity}`);">Show quantity</button>
-    <button onclick="cartQuantity +=1
-    console.log(`cart quantity: ${cartQuantity}`);">Add to cart</button>
-    <button onclick="cartQuantity += 2
-    console.log(`cart quantity: ${cartQuantity}`);">+2</button>
-    <button onclick="cartQuantity += 3
-    console.log(`cart quantity: ${cartQuantity}`);">+3</button>
-    <button onclick="cartQuantity = 0
-    console.log(`cart quantity: ${cartQuantity}`);
-    console.log('cart was reset!')">Reset cart</button>
+    
+    <button onclick="updateCart(1)">Add to cart</button>
+
+    <button onclick="updateCart(2)">+2</button>
+    <button onclick="updateCart(3)">+3</button>
+    <button onclick="
+      cartQuantity = 0;
+      console.log(`cart quantity: ${cartQuantity}`);
+      console.log('cart was reset!');
+    ">Reset cart</button>
 
     <script>
       let cartQuantity = 0;
+      function updateCart(changes){
+        if(cartQuantity + changes > 10){
+          alert('cart is full');
+        }
+        else if (cartQuantity + changes < 0){
+          alert('cart is empty');
+        }
+        else{
+          cartQuantity += changes;
+          console.log(`cart quantity: ${cartQuantity}`);
+        }
+      }
     </script>
   </body>
 </html>
