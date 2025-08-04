@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Subscribe Button</title>
+    <style>
+      .subscribe-btn {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: white;
+        border: 2px solid black;
+        cursor: pointer;
+        border-radius: 50px;
+      }
+
+      .subscribed {
+        background-color: black;
+        color: white;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+
+    <button class="subscribe-btn" onclick="subscribe()">Subscribe</button>
+
+    <script>
+      function subscribe() {
+        const btn = document.querySelector('.subscribe-btn');
+
+        if (btn.innerText === 'Subscribe') {
+          btn.innerText = 'Subscribed';
+          btn.classList.add('subscribed');
+        } else {
+          btn.innerText = 'Subscribe';
+          btn.classList.remove('subscribed');
+        }
+      }
+    </script>
+
+  </body>
+</html>
