@@ -23,10 +23,20 @@
        score.lose=0;
        score.ties=0;
        localStorage.removeItem('score');
+       updateScore();
        ">reset score</button>
 
+    <p class="js-moves"></p>
+    <p class="js-results"></p>
+     
+    <p class="js-score"></p>
+    
+    
     <script>
-      let score = JSON.parse(localStorage.getItem('score'));
+    
+  
+
+    let score = JSON.parse(localStorage.getItem('score'));
       if (score === null) {
         score = {
           wins: 0,
@@ -34,6 +44,9 @@
           ties: 0
         };
       } 
+
+     updateScore();
+    
 
     function playGame(playerMove){
       var computerMove = pickComputerMove();
@@ -74,9 +87,22 @@
           score.ties+=1;
        }
       localStorage.setItem('score',JSON.stringify(score));
+      
+      updateScore();
+      
+      document.querySelector('.js-moves')
+          .innerHTML=`you picked ${playerMove}, computer picked ${computerMove}.`;
+      document.querySelector('.js-results')
+          .innerHTML= result;
      
-      alert(`you picked ${playerMove}, computer picked ${computerMove}. ${result}. wins:${score.wins},lose:${score.lose},tie:${score.ties}`);
       };
+     
+      
+
+      function updateScore(){
+        document.querySelector('.js-score')
+          .innerHTML = ` wins: ${score.wins},lose:${score.lose},tie:${score.ties}`
+      }
 
       function pickComputerMove(){
         const randomNum = Math.random();
