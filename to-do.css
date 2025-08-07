@@ -1,0 +1,36 @@
+body{
+  font-family: arial;
+  background-color:beige
+}
+.list-grid{
+  display: grid;
+  grid-template-columns: 200px 150px 100px;
+  margin-top: 10px;
+  align-items: center;
+}
+.icons-grid{
+  display: grid;
+  grid-template-columns: 200px 150px 100px;
+}
+.lists{
+  width: 185px;
+  height: 30px;
+}
+.dates{
+  width: 135px;
+}
+.add{
+  background-color: green;
+  color:white;
+  border: none;
+  cursor: pointer;
+  
+}
+.delete{
+  height: 35px;
+  background-color: rgb(156, 7, 7);
+  color: white;
+  border: none;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
