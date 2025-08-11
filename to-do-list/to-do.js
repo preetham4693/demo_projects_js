@@ -1,5 +1,13 @@
+
 const toDoList = [];
 renderOnpage();
+
+//adding eventlistners
+document.querySelector('.js-add')
+.addEventListener('click',()=>{
+  addTodoName()
+});
+
 
 function renderOnpage() {
   let todoListHtml = '';
@@ -8,7 +16,7 @@ function renderOnpage() {
     const { name, dueDate } = todoObject;
     const html = `<div> ${name}</div>
     <div> ${dueDate}</div>
-    <button class="delete" onclick="toDoList.splice(${index}, 1); renderOnpage();">
+    <button class="delete js-delete">
     delete </button>`;
     todoListHtml += html;
   })
@@ -27,6 +35,16 @@ function renderOnpage() {
   }*/
 
   document.querySelector('.js-div').innerHTML = todoListHtml;
+
+  //.querySelectorAll() is to select all the elements on the page with class .js-delete
+  document.querySelectorAll('.js-delete')
+   .forEach((deleteButton,index)=>{
+    deleteButton.addEventListener('click',()=>{
+      toDoList.splice(index, 1);
+      renderOnpage();
+    });
+   })
+
 }
 
 function addTodoName() {
