@@ -19,7 +19,7 @@ window.onload = function () {
 function autoplay() {
   const btn = document.getElementById('autoplay-btn');
   if (!isAutoPlaying) {
-    intervalId = setInterval(function () {
+    intervalId = setInterval(() => {
       const playerMove = pickComputerMove();
       playGame(playerMove);
     }, 1000);
